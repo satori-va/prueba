@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Samadhi | Tienda esoterica</title>
+    <link rel="icon" href="https://raw.githubusercontent.com/satori-va/imagenes/main/Logo PNG original.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <button id="scrollTopBtn" class="scroll-top-btn">↑</button>
+    <header>
+        <div class="logo">
+            <img src="https://raw.githubusercontent.com/satori-va/imagenes/main/Logo PNG original.png" alt="Logo SAMADHI" class="logo-imagen">
+        </div>
+        <nav>
+            <ul class="nav-list">
+                <li><a href="index.html">Todos los productos</a></li>
+                <li><a href="hexagonales.html">Hexagonales</a></li>
+                <li><a href="sagradamadre.html">Sagrada Madre</a></li>
+                
+                
+               
+            </ul>
+        </nav>
+        <div class="icono-carrito" onclick="toggleCarrito()" aria-label="Ver carrito" title="Ver carrito">
+            🛒<span id="contador-carrito">(0)</span>
+        </div>
+    </header>
+
+    <!-- Ventana emergente del carrito -->
+    <div id="carrito-popup" class="carrito-popup">
+        <div class="carrito-contenido">
+            <h2>Carrito</h2>
+            <ul id="lista-carrito">
+                <!-- Aquí se mostrarán los productos del carrito -->
+            </ul>
+            <p id="total-carrito">Total: $0.00</p>
+            <a id="enviarWhatsapp" href="#" class="btn-whatsapp" target="_blank">
+                <img src="https://raw.githubusercontent.com/demosprojects/imagenes/main/whatsapp.png" alt="WhatsApp" class="icono-whatsapp"> Enviar por WhatsApp
+            </a>
+            
+            <button onclick="toggleCarrito()" class="btn-cerrar">Cerrar</button>
+        </div>
+    </div>
+    <!-- Modal para ampliar imagen -->
+    <div id="modal" class="modal" onclick="cerrarImagen()">
+        <span class="cerrar">&times;</span>
+        <img class="modal-contenido" id="imagen-ampliada">
+    </div>
+   
+  
+  <!-- Sección de productos -->
+    <section id="productos" class="productos">
+          <div class="producto">
+            <img src="https://raw.githubusercontent.com/satori-va/imagenes/main/coolwater-darshan.jpg" alt="" onclick="abrirImagen(this.src)">
+            <h3>Cool Water-Darshan-20 varillas</h3>
+            <p class="precio">$1.000</p>
+            <button class="btn-agregar" onclick="agregarAlCarrito('Cool Water-Darshan-20 varillas', 1000)">Agrear al carrito</button>
+          </div>
+          <div class="producto">
+            <img src="https://raw.githubusercontent.com/satori-va/imagenes/main/redrose-darshan.jpg" alt="" onclick="abrirImagen(this.src)">
+            <h3>Red Rose-Darshan-20 varillas</h3>
+            <p class="precio">$1.000</p>
+            <button class="btn-agregar" onclick="agregarAlCarrito('Red Rose-Darshan-20 varillas', 1000)">Agrear al carrito</button>
+          </div>
+          <div class="producto">
+            <img src="https://raw.githubusercontent.com/satori-va/imagenes/main/patchouli-darshan.jpg" alt="" onclick="abrirImagen(this.src)">
+            <h3>Patchouli-Darshan-20 varillas</h3>
+            <p class="precio">$1.000</p>
+            <button class="btn-agregar" onclick="agregarAlCarrito('Patchouli-Darshan-20 varillas', 1000)">Agrear al carrito</button>
+          </div>
+          <div class="producto">
+            <img src="https://raw.githubusercontent.com/satori-va/imagenes/main/vainilla-darshan.jpg" alt="" onclick="abrirImagen(this.src)">
+            <h3>Vainilla-Darshan-20 varillas</h3>
+            <p class="precio">$1.000</p>
+            <button class="btn-agregar" onclick="agregarAlCarrito('Vainilla-Darshan-20 varillas', 1000)">Agrear al carrito</button>
+          </div>
+          <div class="producto">
+            <img src="https://raw.githubusercontent.com/satori-va/imagenes/main/frankincense-darshan.jpg" alt="" onclick="abrirImagen(this.src)">
+            <h3>Frank Incense-Darshan-20 varillas</h3>
+            <p class="precio">$1.000</p>
+            <button class="btn-agregar" onclick="agregarAlCarrito('Frank Incense-Darshan-20 varillas', 1000)">Agrear al carrito</button>
+          </div>
+          <div class="producto">
+            <img src="https://raw.githubusercontent.com/satori-va/imagenes/main/sm-psconlavanda.jpg" alt="" onclick="abrirImagen(this.src)">
+            <h3>Palo Santo con Lavanda</h3>
+            <p class="precio">$1.000</p>
+            <button class="btn-agregar" onclick="agregarAlCarrito('Palo Santo con Lavanda', 1000)">Agrear al carrito</button>
+          </div>
+          <div class="producto">
+            <img src="https://raw.githubusercontent.com/satori-va/imagenes/main/sm-psconsandalo.jpg" alt="" onclick="abrirImagen(this.src)">
+            <h3>Palo Santo con Sandalo</h3>
+            <p class="precio">$1.000</p>
+            <button class="btn-agregar" onclick="agregarAlCarrito('Palo Santo con Sandalo', 1000)">Agrear al carrito</button>
+          </div>
+         
+    </section>
+    <footer class="footer-hidden">
+        <p>&copy; 2024 Samadhi - Villa Ángela/Chaco</p>
+        <p>Redes sociales:
+            <a href="https://instagram.com/samadhi.va" target="_blank" class="icon-link">
+                <img src="https://raw.githubusercontent.com/demosprojects/imagenes/main/contactoig.png" alt="Instagram" style="width: 24px; vertical-align: middle;">
+            </a>
+            |
+            <a href="https://wa.me/5493735308294" target="_blank" class="icon-link">
+                <img src="https://raw.githubusercontent.com/demosprojects/imagenes/main/whatsapp.png" alt="WhatsApp" style="width: 24px; vertical-align: middle;">
+            </a>
+        </p>
+         <p>Diseñado y desarrollado por demosprojects.</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <script>
+        const footer = document.querySelector('footer');
+    
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight;
+    
+            // Si el usuario ha llegado al final de la página, muestra el footer
+            if (scrollTop + windowHeight >= documentHeight) {
+                footer.classList.add('footer-visible'); // Muestra el footer
+            }
+        });
+    </script>  
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const scrollTopBtn = document.getElementById("scrollTopBtn");
+    
+            window.addEventListener("scroll", () => {
+                if (window.scrollY > 100) {
+                    scrollTopBtn.style.display = "flex";
+                } else {
+                    scrollTopBtn.style.display = "none";
+                }
+            });
+    
+            scrollTopBtn.addEventListener("click", () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth",
+                });
+            });
+        });
+    </script>
+    
+    
+</html>
+
+
+
+

@@ -1,0 +1,425 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    background-color:  #1c1b29;
+    color: #e8d8ff;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+    
+    background: linear-gradient(90deg, #000000, #6b10a0);
+    box-shadow: 0 2px 1px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo */
+.logo-imagen {
+    width: 100px;
+    height: 100px;
+}
+
+/* Menú de navegación */
+nav {
+    flex: 1;
+    text-align: center;
+}
+
+.nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-list li {
+    margin: 0 10px;
+}
+
+.nav-list a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #e8d8ff;
+    padding: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.nav-list a:hover {
+    background-color: #883997;
+    transform: scale(1.1);
+}
+/* Icono del carrito de compras */
+.icono-carrito {
+    font-size: 20px;
+    cursor: pointer;
+    color:#ffd700;
+}
+
+.icon-link {
+    text-decoration: none; /* Elimina el subrayado del enlace */
+}
+/* Carrito emergente */
+.carrito-popup {
+    position: fixed;
+    top: 50px;
+    right: -100%;
+    width: 300px;
+    background-color: #312450;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 8px;
+    z-index: 1000;
+    transition: right 0.3s ease;
+}
+
+.carrito-popup.mostrar {
+    right: 30px;
+}
+
+.carrito-popup h2 {
+    font-size: 1.6em;
+    margin-bottom: 15px;
+    color: #ffd700;
+    text-align: center;
+    border-bottom: 2px solid #883997;
+    padding-bottom: 10px;
+}
+
+/* Estilos para los elementos del carrito */
+#lista-carrito {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+#lista-carrito li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+#lista-carrito img {
+    width: 50px;
+    height: auto;
+    border-radius: 8px;
+    margin-right: 10px;
+}
+
+#lista-carrito .nombre-producto {
+    flex: 1;
+    font-size: 1rem;
+    color: #e8d8ff;
+}
+
+#lista-carrito .cantidad {
+    font-size: 1rem;
+    color: #a3a3c2;
+    margin-right: 10px;
+}
+
+#lista-carrito .precio-producto {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #00c7b7;
+}
+.descuento {
+    font-family: 'Times New Roman', Times, serif;
+}
+select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 15px; /* Añadir margen superior */
+}
+
+.precio {
+    margin-top: 15px; /* Añadir margen superior */
+    font-weight: bold; /* Resaltar el precio */
+}
+
+#imagen-producto {
+    margin-top: 15px;
+    max-width: 100px; /* Limitar el ancho de la imagen */
+}
+
+
+#lista-carrito li button {
+    background-color: #d32f2f;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#total-carrito {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #ffd700;
+}
+/*probando*/
+.btn-whatsapp {
+    display: flex; /* Para alinear icono y texto en línea */
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    width: 100%;
+    background-color: #2e7d32;
+    color: white;
+    text-align: center;
+    padding: 12px 0;
+    border: none;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    gap: 8px; /* Espaciado entre el ícono y el texto */
+}
+
+.icono-whatsapp {
+    width: 20px; /* Ajusta el tamaño del ícono */
+    height: 20px;
+}
+
+.btn-cerrar {
+    display: block;
+    width: 100%;
+    background-color: #d32f2f;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-agregar {
+    background-color: #6a0572;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-agregar:hover {
+    background-color: #ff768f;
+}
+/* Sección de productos */
+.productos {
+    text-align: center;
+    border: 1px solid #6a0572;
+    background-color: #251a36; 
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    padding: 15px;
+}
+
+/* Estilos responsive */
+@media (max-width: 768px) {
+    .productos {
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas en tablets y móviles */
+    }
+}
+
+@media (max-width: 480px) {
+    .productos {
+        grid-template-columns: repeat(1, 1fr); /* Una columna en móviles */
+    }
+}
+
+.producto {
+    text-align: center;
+    border: 1px solid #6a0572;
+    padding: 8px;
+    border-radius: 8px;
+    background-color: #251a36;
+    max-width: 180px;
+    margin: auto;
+}
+
+.producto img {
+    width: 100%;
+    height: auto;
+    border: 2px solid #ffd700;
+}
+/* Estilos del modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-contenido {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+.cerrar {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.cerrar:hover,
+.cerrar:focus {
+    color: #ccc;
+}
+
+/* Footer */
+footer {
+    background-color: #1c1b29; /* Fondo oscuro */
+    color: #e8d8ff;
+    padding: 20px 10px;
+    text-align: center;
+    border-top: 4px solid #883997;
+    font-size: 0.9rem;
+    position: relative;
+}
+
+/* Estilo de los enlaces en el footer */
+footer a {
+    color: #ffd700; /* Color llamativo para los enlaces */
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #00c7b7; /* Color más claro al pasar el ratón */
+}
+
+/* Iconos sociales */
+.footer-icons {
+    margin: 20px 0;
+}
+
+.footer-icons a {
+    margin: 0 10px;
+    color: #fff;
+    font-size: 1.5rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-icons a:hover {
+    color: #ff7e5f;
+    transform: scale(1.1); /* Animación al pasar el ratón */
+}
+
+/* Texto adicional */
+.footer-text {
+    margin-top: 15px;
+    font-size: 0.8rem;
+    color: #bbb;
+}
+
+.footer-visible {
+    opacity: 1; /* Hace el footer visible */
+}
+
+/* Solución para evitar el desbordamiento del body */
+body {
+    margin: 0; /* Elimina márgenes adicionales */
+    overflow-x: hidden; /* Evita desbordamiento horizontal */
+}
+/* Ajustes para pantallas pequeñas (móviles) */
+@media (max-width: 480px) {
+    footer {
+        padding: 8px; /* Reduce el padding en móviles */
+        font-size: 12px; /* Aún más pequeño el texto */
+        line-height: 1.4; /* Mejora la legibilidad con un poco más de espacio */
+    }
+    
+    .productos {
+        padding-bottom: 80px; /* Añadir un padding inferior para evitar que el footer cubra los productos */
+    }
+}
+.scroll-top-btn {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.scroll-top-btn:hover {
+    background-color: #ec0000;
+}
+
+/* Ajustes para móviles */
+@media (max-width: 768px) {
+    /* Header */
+    header {
+        flex-direction: column; /* Los elementos se apilan */
+        align-items: center;
+        padding: 20px;
+    }
+
+    /* Logo */
+    .logo-imagen {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 10px;
+    }
+
+    /* Menú de navegación */
+    nav {
+        margin-bottom: 10px;
+    }
+
+    .nav-list {
+        flex-direction: column; /* Coloca los enlaces en una columna */
+        align-items: center;
+        gap: 15px; /* Espacio entre los enlaces */
+    }
+
+    .nav-list li {
+        margin: 0;
+    }
+
+    /* Icono del carrito */
+    .icono-carrito {
+        position: static;
+        font-size: 28px; /* Aumenta el tamaño del icono */
+        margin-bottom: 10px;
+    }
+
+    /* Espaciado en el header */
+    header > * {
+        margin-bottom: 10px;
+    }
+}
