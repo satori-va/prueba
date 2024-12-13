@@ -1,10 +1,10 @@
 body {
-    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    font-size: 1rem;
-    background-color:  #1c1b29;
-    color: #e8d8ff;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(120deg, #1f1b24, #302c3a);
+    color: #f4f4f4;
+    overflow-x: hidden;
 }
 
 /* Header */
@@ -12,10 +12,12 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5px 20px;
-    
-    background: linear-gradient(90deg, #000000, #6b10a0);
-    box-shadow: 0 2px 1px rgba(0, 0, 0, 0.1);
+    padding: 8px 16px;
+    background: rgba(31, 27, 36, 0.9);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+   
+    top: 0;
+    z-index: 1000;
 }
 
 /* Logo */
@@ -24,6 +26,7 @@ header {
     height: 100px;
 }
 
+
 /* Menú de navegación */
 nav {
     flex: 1;
@@ -31,6 +34,7 @@ nav {
 }
 
 .nav-list {
+    text-align: center;
     list-style: none;
     padding: 0;
     margin: 0;
@@ -45,12 +49,13 @@ nav {
 .nav-list a {
     text-decoration: none;
     font-weight: bold;
-    color: #e8d8ff;
+    color: #f4f4f4;
+    font-size: 1.1rem;
     padding: 8px;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 .nav-list a:hover {
-    background-color: #883997;
+    color: #b39ddb;
     transform: scale(1.1);
 }
 /* Icono del carrito de compras */
@@ -69,9 +74,10 @@ nav {
     top: 50px;
     right: -100%;
     width: 300px;
-    background-color: #312450;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    padding: 20px;
+    background: #2e2733;
+    color: #f4f4f4;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+    padding: 10px;
     border-radius: 8px;
     z-index: 1000;
     transition: right 0.3s ease;
@@ -194,35 +200,62 @@ select {
     display: block;
     width: 100%;
     background-color: #d32f2f;
-    color: white;
-    padding: 10px;
+    color: #fff;
+    padding: 0.5rem 1rem;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background 0.3s ease;
 }
-
+.btn-cerrar:hover {
+    background: #b71c1c;
+}
 .btn-agregar {
-    background-color: #6a0572;
-    color: white;
+    display: inline-block;
+    background: linear-gradient(45deg, #6a1b9a, #ab47bc);
+    color: #fff;
     border: none;
-    padding: 10px;
-    cursor: pointer;
+    padding: 0.7rem 1.5rem;
+    margin: 1rem 0;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .btn-agregar:hover {
-    background-color: #ff768f;
+    background: linear-gradient(45deg, #ab47bc, #6a1b9a);
+    transform: translateY(-3px);
+}
+
+/* Botón de Vaciar */
+.btn-vaciar {
+    
+    background-color: #000000;
+    color: #fff;
+    padding: 5px 10px; /* Botón más pequeño */
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    
+}
+
+.btn-vaciar:hover {
+    background-color: #d85e51; /* Rojo más oscuro */
+}
+
+.btn-vaciar:active {
+    transform: translateY(1px);
 }
 /* Sección de productos */
 .productos {
-    text-align: center;
-    border: 1px solid #6a0572;
-    background-color: #251a36; 
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
-    padding: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
 }
 
 /* Estilos responsive */
@@ -239,20 +272,33 @@ select {
 }
 
 .producto {
+    background: #2e2733;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
     text-align: center;
-    border: 1px solid #6a0572;
-    padding: 8px;
-    border-radius: 8px;
-    background-color: #251a36;
-    max-width: 180px;
-    margin: auto;
+    transition: transform 0.3s ease;
 }
-
+.producto:hover {
+    transform: scale(1.05);
+}
+/*edicion de imagenes de los productos*/
 .producto img {
     width: 100%;
-    height: auto;
+    height: 200px;
     border: 2px solid #ffd700;
+    object-fit: cover;
+    transition: transform 0.3s ease;
 }
+.producto img:hover {
+    transform: scale(1.1);
+}
+.producto .precio {
+    color: #ffc107;
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+}
+
 /* Estilos del modal */
 .modal {
     display: none;
@@ -291,25 +337,25 @@ select {
 
 /* Footer */
 footer {
-    background-color: #1c1b29; /* Fondo oscuro */
-    color: #e8d8ff;
-    padding: 20px 10px;
+    background: #1f1b24;
+    color: #b39ddb;
+    padding: 1rem 0;
     text-align: center;
     border-top: 4px solid #883997;
     font-size: 0.9rem;
     position: relative;
+    margin-top: 2rem;
 }
 
 /* Estilo de los enlaces en el footer */
 footer a {
-    color: #ffd700; /* Color llamativo para los enlaces */
+    color: #b39ddb;
     text-decoration: none;
-    margin: 0 10px;
     transition: color 0.3s ease;
 }
 
 footer a:hover {
-    color: #00c7b7; /* Color más claro al pasar el ratón */
+    color: #ffc107;
 }
 
 /* Iconos sociales */
@@ -384,9 +430,10 @@ body {
 @media (max-width: 768px) {
     /* Header */
     header {
-        flex-direction: column; /* Los elementos se apilan */
+        display: flex;
+        flex-direction: column; /* Mantiene el header apilado */
         align-items: center;
-        padding: 20px;
+        padding: 3px;
     }
 
     /* Logo */
@@ -399,27 +446,307 @@ body {
     /* Menú de navegación */
     nav {
         margin-bottom: 10px;
+        width: 100%; /* Asegura que el menú ocupe todo el ancho */
     }
 
     .nav-list {
-        flex-direction: column; /* Coloca los enlaces en una columna */
-        align-items: center;
-        gap: 15px; /* Espacio entre los enlaces */
+        display: flex; /* Usa flexbox para los enlaces */
+        flex-direction: row; /* Mantiene los enlaces en fila */
+        justify-content: space-around; /* Distribuye espacio uniforme entre los enlaces */
+        align-items: center; /* Centra los enlaces verticalmente */
+        gap: 10px; /* Espacio entre los enlaces */
+        padding: 0;
+        margin: 0;
+        list-style: none; /* Elimina los puntos de lista */
+        white-space: nowrap; /* Impide que los textos largos se dividan */
     }
 
     .nav-list li {
         margin: 0;
+        flex-grow: 1; /* Asegura que cada enlace tenga el mismo espacio */
+        text-align: center; /* Centra el texto en cada elemento */
+        font-size: 2px;
     }
 
     /* Icono del carrito */
     .icono-carrito {
         position: static;
         font-size: 28px; /* Aumenta el tamaño del icono */
-        margin-bottom: 10px;
+        margin-top: 10px; /* Añade espacio superior para separarlo del menú */
     }
 
     /* Espaciado en el header */
     header > * {
-        margin-bottom: 10px;
+        margin-bottom: 8px; /* Aumenta el espaciado entre elementos */
     }
 }
+/* Estilos del modal */
+.modal2 {
+    display: none; /* Ocultar por defecto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Aseguramos que el modal esté por encima de otros elementos */
+}
+
+.modal-contenido2 {
+    background-color: #131212;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra para el modal */
+}
+
+/* Estilos para los botones dentro del modal */
+.modal-contenido2 button {
+    margin: 10px;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 120px; /* Ancho de los botones */
+}
+
+/* Estilo para el botón Vaciar */
+.modal-contenido2 button#btnConfirmar {
+    background-color: #28a745; /* Verde */
+    color: white;
+}
+
+/* Estilo para el botón Cancelar */
+.modal-contenido2 button#btnCancelar {
+    background-color: #dc3545; /* Rojo */
+    color: white;
+}
+
+/* Efecto de hover para los botones */
+.modal-contenido2 button:hover {
+    transform: scale(1.1);
+}
+
+/* Efecto de hover para el botón Vaciar */
+.modal-contenido2 button#btnConfirmar:hover {
+    background-color: #218838; /* Verde más oscuro */
+}
+
+/* Efecto de hover para el botón Cancelar */
+.modal-contenido2 button#btnCancelar:hover {
+    background-color: #c82333; /* Rojo más oscuro */
+}
+
+.modal2 {
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+/* Banner TODOS*/
+.banner {
+    font-family: 'Grenze Gotisch', serif;
+    background-image: url('https://raw.githubusercontent.com/satori-va/imagenes/main/banner6.jpg'), linear-gradient(120deg, #1f1b24, #302c3a);
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 50px 20px;
+    position: relative; /* Esto es importante para posicionar el logo dentro de este contenedor */
+}
+
+.logobanner {
+    position: center; /* Para que el logo esté encima de la imagen de fondo */
+    top: 80%; /* Centrado verticalmente */
+    left: 80%; /* Centrado horizontalmente */
+    max-width: 350px; /* Ajusta el tamaño del logo según sea necesario */
+    z-index: 2; /* Asegura que el logo esté por encima de la imagen */
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn{
+    from {opacity: 0;transform: translateY(-20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+
+/* Estilos del botón CTA */
+.cta-button {
+    font-family: 'Montserrat', sans-serif;
+    display: inline-block;
+    background-color: #d61fb8; /* Color cálido */
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 20px; /* Espacio superior para el botón */
+}
+
+.cta-button:hover {
+    background-color: #b38867; /* Tonalidad más oscura */
+    transition: background-color 0.3s;
+}
+
+/*Banner darshan*/
+.banner2 {
+    font-family: 'Grenze Gotisch', serif;
+    background-image: url('https://raw.githubusercontent.com/satori-va/imagenes/main/bannerdarshan.jpg'), linear-gradient(120deg, #1f1b24, #302c3a);
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 50px 20px;
+    position: relative; /* Esto es importante para posicionar el logo dentro de este contenedor */
+}
+
+.logobanner {
+    position: center; /* Para que el logo esté encima de la imagen de fondo */
+    top: 80%; /* Centrado verticalmente */
+    left: 80%; /* Centrado horizontalmente */
+    max-width: 350px; /* Ajusta el tamaño del logo según sea necesario */
+    z-index: 2; /* Asegura que el logo esté por encima de la imagen */
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn{
+    from {opacity: 0;transform: translateY(-20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+/* Estilos del botón CTA */
+.cta-button {
+    font-family: 'Montserrat', sans-serif;
+    display: inline-block;
+    background-color: #d61fb8; /* Color cálido */
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 20px; /* Espacio superior para el botón */
+}
+
+.cta-button:hover {
+    background-color: #b38867; /* Tonalidad más oscura */
+    transition: background-color 0.3s;
+}
+/* Banner SAC */
+.banner3 {
+    font-family: 'Grenze Gotisch', serif;
+    background-image: url('https://raw.githubusercontent.com/satori-va/imagenes/main/banneresac.jpg'), linear-gradient(120deg, #1f1b24, #302c3a);
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 50px 20px;
+    position: relative; /* Esto es importante para posicionar el logo dentro de este contenedor */
+}
+
+.logobanner {
+    position: center; /* Para que el logo esté encima de la imagen de fondo */
+    top: 80%; /* Centrado verticalmente */
+    left: 80%; /* Centrado horizontalmente */
+    max-width: 350px; /* Ajusta el tamaño del logo según sea necesario */
+    z-index: 2; /* Asegura que el logo esté por encima de la imagen */
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn{
+    from {opacity: 0;transform: translateY(-20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+/* Estilos del botón CTA */
+.cta-button {
+    font-family: 'Montserrat', sans-serif;
+    display: inline-block;
+    background-color: #d61fb8; /* Color cálido */
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 20px; /* Espacio superior para el botón */
+}
+
+.cta-button:hover {
+    background-color: #b38867; /* Tonalidad más oscura */
+    transition: background-color 0.3s;
+}
+/* Estilo para el mensaje emergente */
+.mensaje-agregado {
+    position: fixed;
+    top: 20px;
+    right: 20px; /* Coloca el mensaje a la derecha */
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+/*AVISO CARRITO VACIO*/
+.modal-aviso {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #030303;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.modal-content button {
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    width: 120px;
+    margin: 10px;
+}
+
+.modal-content button:hover {
+    transform: scale(1.05);
+}
+
+.modal-content button.aceptar {
+    background-color: #28a745; /* Verde */
+    color: white;
+}
+
+
+.modal-content button.aceptar:hover {
+    background-color: #218838; /* Verde oscuro */
+}
+
+

@@ -18,6 +18,36 @@ function guardarCarrito() {
     localStorage.setItem('carrito', JSON.stringify(carrito));
 }
 
+// Función para vaciar el carrito
+function vaciarCarrito() {
+    carrito = []; // Vaciar el arreglo
+    guardarCarrito(); // Actualizar en localStorage
+    actualizarCarrito(); // Actualizar el DOM
+}
+
+function confirmarVaciarCarrito() {
+    const totalProductos = carrito.reduce((sum, producto) => sum + producto.cantidad, 0); 
+    const mensaje = `¿Estás seguro? Se van a borrar ${totalProductos} producto${totalProductos !== 1 ? 's' : ''}`;
+
+
+    // Mostrar el modal con el mensaje
+    document.getElementById('mensajeConfirmacion').textContent = mensaje;
+    document.getElementById('modalConfirmacion').style.display = 'flex';
+}
+
+function cerrarModal() {
+    // Cerrar el modal
+    document.getElementById('modalConfirmacion').style.display = 'none';
+}
+
+// Modificar la función vaciarCarrito para que cierre el modal después de vaciar
+function vaciarCarrito() {
+    carrito = []; // Vaciar el arreglo
+    guardarCarrito(); // Actualizar en localStorage
+    actualizarCarrito(); // Actualizar el DOM
+    cerrarModal(); // Cerrar el modal
+}
+
 // Función para abrir la imagen en un modal
 function abrirImagen(src) {
     const modal = document.getElementById('modal');
@@ -48,6 +78,21 @@ function agregarAlCarrito(nombreProducto, precio) {
 
     guardarCarrito(); // Guardamos el carrito
     actualizarCarrito(); // Actualizamos el carrito visual
+    mostrarMensajeAgregado(); // Mostrar el mensaje de "Producto agregado"
+}
+
+// Función para mostrar el mensaje de "Producto agregado"
+function mostrarMensajeAgregado() {
+    const mensaje = document.createElement('div');
+    mensaje.classList.add('mensaje-agregado');
+    mensaje.textContent = 'PRODUCTO AGREGADO';
+    
+    document.body.appendChild(mensaje);
+
+    // Eliminar el mensaje después de 3 segundos
+    setTimeout(() => {
+        mensaje.remove();
+    }, 3000);
 }
 
 // Función para actualizar el carrito en el DOM
@@ -125,12 +170,24 @@ function toggleCarrito() {
     carritoPopup.classList.toggle('mostrar');
 }
 
-// Función para construir el mensaje y abrir WhatsApp
+// Función para mostrar el modal de carrito vacío
+function mostrarAvisoCarritoVacio() {
+    const modalAviso = document.getElementById('modal-aviso');
+    modalAviso.style.display = 'flex';
+}
+
+// Función para cerrar el modal de carrito vacío
+function cerrarAvisoCarritoVacio() {
+    const modalAviso = document.getElementById('modal-aviso');
+    modalAviso.style.display = 'none';
+}
+
+// Función para enviar el mensaje por WhatsApp
 function enviarPorWhatsApp(event) {
     event.preventDefault(); // Prevenir el comportamiento por defecto
 
     if (carrito.length === 0) {
-        alert("El carrito está vacío.");
+        mostrarAvisoCarritoVacio(); // Mostrar aviso si el carrito está vacío
         return;
     }
 
@@ -176,6 +233,18 @@ function checkFooterVisibility() {
 // Ejecutar al cargar la página y al redimensionar
 window.addEventListener('load', checkFooterVisibility);
 window.addEventListener('resize', checkFooterVisibility);
+
+// Función para aceptar el aviso de carrito vacío
+function aceptarAviso() {
+    cerrarAvisoCarritoVacio();
+}
+
+// Función para cancelar el aviso de carrito vacío
+function cancelarAviso() {
+    cerrarAvisoCarritoVacio();
+}
+
+
 
 
 

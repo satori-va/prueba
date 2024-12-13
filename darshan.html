@@ -9,10 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@400;700&display=swap" rel="stylesheet">
 
-
 </head>
 <body>
-
     <button id="scrollTopBtn" class="scroll-top-btn">↑</button>
     <header>
         <div class="logo">
@@ -23,31 +21,28 @@
                 <li><a href="index.html">Ver todos</a></li>
                 <li><a href="darshan.html">Darshan</a></li>
                 <li><a href="sac.html">SAC</a></li>
-                
+               
             </ul>
         </nav>
-        <div class="icono-carrito" onclick="toggleCarrito()">
-          🛒<span id="contador-carrito">(0)</span>
-      </div>
-        
+        <div class="icono-carrito" onclick="toggleCarrito()" aria-label="Ver carrito" title="Ver carrito">
+            🛒<span id="contador-carrito">(0)</span>
+        </div>
     </header>
- <!-- Banner principal -->
-      <section class="banner">
-      <img src="https://raw.githubusercontent.com/satori-va/imagenes/main/logonegro.png" alt="" class="logobanner">
-      <h1>🔮Tenemos los mejores sahumerios y productos esotéricos que llenarán tu vida de energía positiva.🔮</h1>
-      <a href="https://instagram.com/samadhi.va" target="_blank" class="cta-button">
+<!-- Banner principal -->
+<section class="banner2">
+    <img src="https://raw.githubusercontent.com/satori-va/imagenes/main/logonegro.png" alt="" class="logobanner">
+    <h1>🕯️Sahumerios Darshan🌿</h1>
+    <a href="https://instagram.com/samadhi.va" target="_blank" class="cta-button">
       <img src="https://raw.githubusercontent.com/demosprojects/imagenes/main/contactoig.png" alt="Instagram" style="width: 30px; vertical-align: middle;">
       ¡Seguinos en Instagram!
-    </a>
-</section>
+  </a>
+  </section>
     <!-- Ventana emergente del carrito -->
     <div id="carrito-popup" class="carrito-popup">
         <div class="carrito-contenido">
             <h2>Carrito de compras</h2>
             <button id="btnVaciarCarrito" onclick="confirmarVaciarCarrito()" class="btn-vaciar">Vaciar carrito</button>
-
             <ul id="lista-carrito">
-              
                 <!-- Aquí se mostrarán los productos del carrito -->
             </ul>
             <p id="total-carrito">Total: $0.00</p>
@@ -56,39 +51,29 @@
             </a>
             
             <button onclick="toggleCarrito()" class="btn-cerrar">Cerrar</button>
-           
         </div>
+    
     </div>
+
     <!-- Modal para ampliar imagen -->
     <div id="modal" class="modal" onclick="cerrarImagen()">
         <span class="cerrar">&times;</span>
         <img class="modal-contenido" id="imagen-ampliada">
     </div>
-   
+
     <div id="modalConfirmacion" class="modal2">
-      <div class="modal-contenido2">
-          <p id="mensajeConfirmacion"></p>
-          <button id="btnConfirmar" onclick="vaciarCarrito()">Vaciar</button>
-          <button id="btnCancelar" onclick="cerrarModal()">Cancelar</button>
-      </div>
-  </div>
-  
-  <div id="modal-aviso" class="modal-aviso">
-    <div class="modal-content">
-        <p>El carrito está vacío.</p>
-        <button class="aceptar" onclick="aceptarAviso()">Aceptar</button>
+        <div class="modal-contenido2">
+            <p id="mensajeConfirmacion"></p>
+            <button id="btnConfirmar" onclick="vaciarCarrito()">Vaciar</button>
+            <button id="btnCancelar" onclick="cerrarModal()">Cancelar</button>
+        </div>
     </div>
-</div>
-
-
-
+  
   <!-- Sección de productos -->
     <section id="productos" class="productos">
-        <!--Hexagonales-->
-          <div class="producto">
+        <div class="producto">
             <img src="https://raw.githubusercontent.com/satori-va/imagenes/main/coolwater-darshan.jpg" alt="" onclick="abrirImagen(this.src)">
-            <h3>Cool Water - Darshan</h3>
-            <p>Contiene 20 varillas.</p>
+            <h3>Cool Water-Darshan-20 varillas</h3>
             <p class="precio">$1.000</p>
             <button class="btn-agregar" onclick="agregarAlCarrito('Cool Water-Darshan-20 varillas', 1000)">Añadir al carrito</button>
           </div>
@@ -100,18 +85,29 @@
             <button class="btn-agregar" onclick="agregarAlCarrito('Rosa-Darshan-20 varillas', 1000)">Añadir al carrito</button>
           </div>
           <div class="producto">
+            <img src="https://raw.githubusercontent.com/satori-va/imagenes/main/redrose-darshan.jpg" alt="" onclick="abrirImagen(this.src)">
+            <h3>Red Rose-Darshan-20 varillas</h3>
+            <p class="precio">$1.000</p>
+            <button class="btn-agregar" onclick="agregarAlCarrito('Red Rose-Darshan-20 varillas', 1000)">Añadir al carrito</button>
+          </div>
+          <div class="producto">
+            <img src="https://raw.githubusercontent.com/satori-va/imagenes/main/patchouli-darshan.jpg" alt="" onclick="abrirImagen(this.src)">
+            <h3>Patchouli-Darshan-20 varillas</h3>
+            <p class="precio">$1.000</p>
+            <button class="btn-agregar" onclick="agregarAlCarrito('Patchouli-Darshan-20 varillas', 1000)">Añadir al carrito</button>
+          </div>
+          <div class="producto">
+            <img src="https://raw.githubusercontent.com/satori-va/imagenes/main/vainilla-darshan.jpg" alt="" onclick="abrirImagen(this.src)">
+            <h3>Vainilla-Darshan-20 varillas</h3>
+            <p class="precio">$1.000</p>
+            <button class="btn-agregar" onclick="agregarAlCarrito('Vainilla-Darshan-20 varillas', 1000)">Añadir al carrito</button>
+          </div>
+          <div class="producto">
             <img src="https://raw.githubusercontent.com/satori-va/imagenes/main/coco-darshan.jpg" alt="" onclick="abrirImagen(this.src)">
             <h3>Coco - Darshan</h3>
             <p>Contiene 20 varillas.</p>
             <p class="precio">$1.000</p>
             <button class="btn-agregar" onclick="agregarAlCarrito('Coco-Darshan-20 varillas', 1000)">Añadir al carrito</button>
-          </div>
-          <div class="producto">
-            <img src="https://raw.githubusercontent.com/satori-va/imagenes/main/redrose-darshan.jpg" alt="" onclick="abrirImagen(this.src)">
-            <h3>Red Rose - Darshan</h3>
-            <p>Contiene 20 varillas.</p>
-            <p class="precio">$1.000</p>
-            <button class="btn-agregar" onclick="agregarAlCarrito('Red Rose-Darshan-20 varillas', 1000)">Añadir al carrito</button>
           </div>
           <div class="producto">
             <img src="https://raw.githubusercontent.com/satori-va/imagenes/main/sandalo-darshan.jpg" alt="" onclick="abrirImagen(this.src)">
@@ -121,30 +117,32 @@
             <button class="btn-agregar" onclick="agregarAlCarrito('Sandalo-Darshan-20 varillas', 1000)">Añadir al carrito</button>
           </div>
           <div class="producto">
-            <img src="https://raw.githubusercontent.com/satori-va/imagenes/main/vainilla-darshan.jpg" alt="" onclick="abrirImagen(this.src)">
-            <h3>Vainilla-Darshan</h3>
-            <p>Contiene 20 varillas.</p>
+            <img src="https://via.placeholder.com/150" alt="" onclick="abrirImagen(this.src)">
+            <h3></h3>
             <p class="precio">$1.000</p>
-            <button class="btn-agregar" onclick="agregarAlCarrito('Vainilla-Darshan-20 varillas', 1000)">Añadir al carrito</button>
+            <button class="btn-agregar" onclick="agregarAlCarrito('Sahumerio canela x20', 1000)">Añadir al carrito</button>
           </div>
           <div class="producto">
-            <img src="https://raw.githubusercontent.com/satori-va/imagenes/main/frankincense-darshan.jpg" alt="" onclick="abrirImagen(this.src)">
-            <h3>Frank Incense-Darshan</h3>
-            <p>Contiene 20 varillas.</p>
+            <img src="https://via.placeholder.com/150" alt="" onclick="abrirImagen(this.src)">
+            <h3></h3>
             <p class="precio">$1.000</p>
-            <button class="btn-agregar" onclick="agregarAlCarrito('Frank Incense-Darshan-20 varillas', 1000)">Añadir al carrito</button>
+            <button class="btn-agregar" onclick="agregarAlCarrito('Sahumerio canela x20', 1000)">Añadir al carrito</button>
           </div>
           <div class="producto">
-            <img src="https://raw.githubusercontent.com/satori-va/imagenes/main/sanexpedito-sac.jpg" alt="" onclick="abrirImagen(this.src)">
-            <h3>San Expedito - SAC</h3>
-            <p>Contiene 20 varillas.</p>
+            <img src="https://via.placeholder.com/150" alt="" onclick="abrirImagen(this.src)">
+            <h3></h3>
             <p class="precio">$1.000</p>
-            <button class="btn-agregar" onclick="agregarAlCarrito('San Expedito-SAC-20 varillas', 1000)">Añadir al carrito</button>
+            <button class="btn-agregar" onclick="agregarAlCarrito('Sahumerio canela x20', 1000)">Añadir al carrito</button>
           </div>
-          
+          <div class="producto">
+            <img src="https://via.placeholder.com/150" alt="" onclick="abrirImagen(this.src)">
+            <h3></h3>
+            <p class="precio">$1.000</p>
+            <button class="btn-agregar" onclick="agregarAlCarrito('Sahumerio canela x20', 1000)">Añadir al carrito</button>
+          </div>
     </section>
     <footer class="footer-hidden">
-        <p>&copy;2024 Samadhi - Tienda Esotérica. Todos los derechos reservados.</p>
+        <p>&copy; 2024 Samadhi - Villa Ángela/Chaco</p>
         <p>Redes sociales:
             <a href="https://instagram.com/samadhi.va" target="_blank" class="icon-link">
                 <img src="https://raw.githubusercontent.com/demosprojects/imagenes/main/contactoig.png" alt="Instagram" style="width: 24px; vertical-align: middle;">
@@ -154,9 +152,8 @@
                 <img src="https://raw.githubusercontent.com/demosprojects/imagenes/main/whatsapp.png" alt="WhatsApp" style="width: 24px; vertical-align: middle;">
             </a>
         </p>
-        <p>Diseñado y desarrollado por demosprojects.</p>
+         <p>Diseñado y desarrollado por demosprojects.</p>
     </footer>
-    
 
     <script src="script.js"></script>
 
@@ -198,7 +195,3 @@
     
     
 </html>
-
-
-
-
