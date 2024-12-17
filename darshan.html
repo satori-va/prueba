@@ -40,23 +40,27 @@
   </a>
   </section>
     <!-- Ventana emergente del carrito -->
-    <div id="carrito-popup" class="carrito-popup">
-        <div class="carrito-contenido">
-            <h2>Carrito de compras</h2>
-            <button id="btnVaciarCarrito" onclick="confirmarVaciarCarrito()" class="btn-vaciar">Vaciar carrito</button>
-            <ul id="lista-carrito">
-                <!-- Aquí se mostrarán los productos del carrito -->
-            </ul>
-            <p id="total-carrito">Total: $0.00</p>
-            <a id="enviarWhatsapp" href="#" class="btn-whatsapp" target="_blank">
-                <img src="https://raw.githubusercontent.com/demosprojects/imagenes/main/whatsapp.png" alt="WhatsApp" class="icono-whatsapp"> Enviar por WhatsApp
-            </a>
-            
-            <button onclick="toggleCarrito()" class="btn-cerrar">Cerrar</button>
-        </div>
-    
-    </div>
+<div id="carrito-popup" class="carrito-popup">
+    <div class="carrito-contenido">
+        <h2>Carrito de compras</h2>
+        
+        <ul id="lista-carrito">
+            <!-- Aquí se mostrarán los productos del carrito -->
+        </ul>
 
+        <!-- Total y Vaciar carrito alineados -->
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <p id="total-carrito">Total: $0.00</p>
+            <button id="btnVaciarCarrito" onclick="confirmarVaciarCarrito()" class="btn-vaciar">Vaciar carrito</button>
+        </div>
+
+        <a id="enviarWhatsapp" href="#" class="btn-whatsapp" target="_blank">
+            <img src="https://raw.githubusercontent.com/demosprojects/imagenes/main/whatsapp.png" alt="WhatsApp" class="icono-whatsapp"> Enviar por WhatsApp
+        </a>
+        
+        <button onclick="toggleCarrito()" class="btn-cerrar">Cerrar</button>
+    </div>
+</div>
     <!-- Modal para ampliar imagen -->
     <div id="modal" class="modal" onclick="cerrarImagen()">
         <span class="cerrar">&times;</span>
