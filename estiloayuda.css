@@ -47,17 +47,14 @@
         }
 
         footer {
-        position: fixed; /* Deja el footer fijo */
-        bottom: 0; /* Pegado abajo */
-        left: 0; /* Pegado a la izquierda */
-        width: 100%; /* Ocupa todo el ancho */
-        background: #1f1b24; /* Color de fondo */
-        color: #b39ddb; /* Color del texto */
-        padding: 10px; /* Espaciado interno */
-        text-align: center; /* Centrar texto */
-        border-top: 4px solid #883997; /* Borde superior */
-        font-size: 0.9rem; /* Tamaño del texto */
-        margin-top: 0; /* Elimina el margen superior */
+       background: #1f1b24;
+    color: #b39ddb;
+    padding: 1rem 0;
+    text-align: center;
+    border-top: 4px solid #883997;
+    font-size: 0.9rem;
+    position: relative;
+    margin-top: 2rem;
     }
     .btn-volver {
         display: inline-block;
