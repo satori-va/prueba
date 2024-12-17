@@ -1,0 +1,130 @@
+ body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(120deg, #1f1b24, #302c3a);
+            color: #0c0c0c;
+            overflow-x: hidden;
+        }
+
+        header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 8px 16px;
+            background: rgba(31, 27, 36, 0.9);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .seccion-como-funciona {
+            max-width: 800px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            text-align: center;
+            color: #ffffff;
+        }
+        h2 {
+            text-align: center;
+            color: #0f0f0f;
+        }
+        ol {
+            margin: 20px 0;
+            padding-left: 20px;
+        }
+
+        ol li {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        footer {
+        position: fixed; /* Deja el footer fijo */
+        bottom: 0; /* Pegado abajo */
+        left: 0; /* Pegado a la izquierda */
+        width: 100%; /* Ocupa todo el ancho */
+        background: #1f1b24; /* Color de fondo */
+        color: #b39ddb; /* Color del texto */
+        padding: 10px; /* Espaciado interno */
+        text-align: center; /* Centrar texto */
+        border-top: 4px solid #883997; /* Borde superior */
+        font-size: 0.9rem; /* Tamaño del texto */
+        margin-top: 0; /* Elimina el margen superior */
+    }
+    .btn-volver {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #883997; /* Color de fondo */
+        color: #ffffff; /* Color del texto */
+        text-decoration: none;
+        border-radius: 5px; /* Bordes redondeados */
+        font-size: 1rem;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-volver:hover {
+        background-color: #6a1b9a; /* Color al pasar el mouse */
+    }
+    .redes-sociales {
+    
+    color: #b39ddb; /* Color de texto */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    margin-top: 2rem; /* Separación superior */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra ligera */
+    text-align: center;
+}
+
+.redes-sociales p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: #d1c4e9; /* Color claro para el párrafo */
+}
+
+.btn-redes {
+    display: inline-block;
+    margin: 5px 10px; /* Espaciado entre botones */
+    padding: 10px 15px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #ffffff; /* Texto blanco */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s ease;
+}
+
+.btn-redes.instagram {
+    background-color: #e4405f; /* Color de Instagram */
+}
+
+.btn-redes.instagram:hover {
+    background-color: #c13584; /* Color al pasar el mouse */
+}
+
+.btn-redes.whatsapp {
+    background-color: #25d366; /* Color de WhatsApp */
+}
+
+.btn-redes.whatsapp:hover {
+    background-color: #128c7e; /* Color al pasar el mouse */
+}
+
+/* Estilo para la imagen debajo de los botones */
+.imagen-ayuda {
+    margin-top: 20px; /* Separación superior */
+    width: 100%; /* Tamaño máximo al 100% del contenedor */
+    max-width: 300px; /* Tamaño máximo para la imagen */
+    height: auto; /* Mantener proporciones */
+    border-radius: 10px; /* Bordes redondeados */
+    display: block; /* Hacer que la imagen ocupe el espacio adecuado */
+    margin-left: auto;
+    margin-right: auto; /* Centrar la imagen */
+}
